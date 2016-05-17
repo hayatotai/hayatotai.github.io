@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
 	<title>test</title>
 </head>
 <body>
-	test
+	<p id="test">test</p>
 </body>
+<script>
+	$('#test').on('click',function() {
+		alert("ok");
+	});
+</script>
 </html>
