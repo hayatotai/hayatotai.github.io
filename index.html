@@ -3,17 +3,25 @@
 <head>
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
 	<title>test</title>
-	<script>
-		$(function() {
-			$('#btn').on('click',function(e) {
-				e.preventDefault();
-				alert("ok");
-			});
-		});
-	</script>
 </head>
 <body>
 	<h1>Hello World!!</h1>
 	<button id="btn">alert</button>
+	<p id="ajax_content"></p>
+
+	<script>
+		$(function() {
+			$('#btn').on('click',function(e) {
+				$.ajax({
+					url: "ajax.html"
+				}).done(function(res) {
+					$('#ajax_content').html(res);
+				}).fail(function(res) {
+					alert('fail');
+					console.log(res);
+				});
+			});
+		});
+	</script>
 </body>
 </html>
