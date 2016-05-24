@@ -10,16 +10,14 @@
 	<p id="ajax_content"></p>
 
 	<script>
-		$(function() {
-			$('#btn').on('click',function(e) {
-				$.ajax({
-					url: "ajax.html"
-				}).done(function(res) {
-					$('#ajax_content').html(res);
-				}).fail(function(res) {
-					alert('fail');
-					console.log(res);
-				});
+		$('#btn').on('click',function(e) {
+			$.ajax({
+				url: "https://aed.azure-mobile.net/api/AEDSearch?lat=35.96&lng=136.185&r=300"
+			}).done(function(res) {
+				$('#ajax_content').html(res);
+			}).fail(function(res) {
+				alert('fail');
+				console.log(res);
 			});
 		});
 	</script>
